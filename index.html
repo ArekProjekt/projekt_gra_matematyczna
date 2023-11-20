@@ -3,10 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protected Gallery</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Konkurs z kodami QR</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px auto;
+        }
+ 
+        td {
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            border: 1px solid #000;
+            cursor: pointer;
+        }
+ 
+        .clue {
+            margin: 10px;
+        }
+    </style>
 </head>
 <body>
+ 
+    <h1>Kod do krzyżówki</h1>
+<img src="foto/qrcode_puzzel.org.png" alt="Kod QR">
+     
     <form onsubmit="displayImage(); return false;">
         <label for="password">Wprowadź hasło z krzyżówki(Wielkimi literami):</label>
         <input type="password" id="password" required>
@@ -27,5 +49,6 @@
             }
         }
     </script>
+ 
 </body>
 </html>
