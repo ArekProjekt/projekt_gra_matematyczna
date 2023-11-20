@@ -7,14 +7,25 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <label for="password">Enter Password:</label>
-        <input type="password" id="password">
-        <button onclick="checkPassword()">Submit</button>
-        <div id="gallery" style="display:none;">
-            <img src="qr.png" alt="Kod qr">
-        </div>
-    </div>
-    <script src="script.js"></script>
+    <form onsubmit="displayImage(); return false;">
+        <label for="password">Wprowadź hasło z krzyżówki(Wielkimi literami):</label>
+        <input type="password" id="password" required>
+        <button type="submit">Wyświetl kod QR</button>
+    </form>
+ 
+    <div id="imageContainer"></div>
+ 
+    <script>
+        function displayImage() {
+            var password = document.getElementById("password").value;
+            var imageContainer = document.getElementById("imageContainer");
+            var imagePath = "qr.png";
+            if (password === "L1ZFLSTROEN") {
+                imageContainer.innerHTML = '<img src="' + imagePath + '" alt="Kod QR">';
+            } else {
+                imageContainer.innerHTML = '<p>Nieprawidłowe hasło.</p>';
+            }
+        }
+    </script>
 </body>
 </html>
